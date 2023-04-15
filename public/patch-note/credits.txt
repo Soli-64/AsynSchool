@@ -1,0 +1,11 @@
+
+developper: Louis Sochon
+
+grafic: 
+
+    triangles verts:        "https://fr.freepik.com/vecteurs-libre/vecteur-fond-cristallise-vert-blanc_
+                            31067578.htm#query=triangle%20vert&position=12&from_view=keyword&track=ais"
+                            
+    triangles verts 2:      "https://fr.freepik.com/vecteurs-libre/abstarct-conception-coloree-polygonal
+                            -fond-transparent_1086238.htm#query=triangle%20vert&position=41&from_view=keyword
+                            &track=ais"

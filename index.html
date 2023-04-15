@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prosto+One&display=swap" rel="stylesheet">
+    
+    <script src="./main.js" type="module" defer></script>
+    
+    <title>AsynSchool</title>
+
+  </head>
+
+  <body>
+
+    <header class="header">
+      <div class="section-barre">
+        <p id="accueil" class="section-barre-element" href="">accueil</p>
+        <p id="classes" href="" class="section-barre-element">classes</p>
+        <p href="" class="section-barre-element">EdT</p>
+      </div>
+      <h1 class="title" id="main-title">AsynSchool</h1>
+      <div class="contact-barre">
+        <p href="" class="contact-barre-element">notes</p>
+        <p class="contact-barre-element" href="">tjrpas</p>
+        <p class="contact-barre-element" href="">jsp</p>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="citation">
+        <p id="citation">"Là où l'éducation rencontre l'innovation."</p>
+      </div>
+      <div class="accueil invisible">
+        <article class="article-info">
+          <h2 class="little-title class-create-title">Créer une classe</h2>
+          <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+             Laboriosam dignissimos impedit unde quis consectetur, 
+             earum adipisci distinctio temporibus sed architecto veritatis 
+             exercitationem voluptate, tenetur soluta ex sint, aperiam culpa eius.</p>
+        </article>
+        <article class="article-info">
+          <h2 class="little-title class-create-title">Gérer les notes, les élèves et les emplois du temps</h2>
+          <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+            Laboriosam dignissimos impedit unde quis consectetur, 
+            earum adipisci distinctio temporibus sed architecto veritatis 
+            exercitationem voluptate, tenetur soluta ex sint, aperiam culpa eius.</p>
+        </article>
+      </div>
+
+      <div class="classes">
+        
+        <p class="little-title new-class-intro">Classes</p>
+
+        <div class="classes-container">
+          <article class="classes-article">
+            <!--<p class="no-class">Pas de classes...</p>-->
+          </article>
+          <button class="new-class">Créer une classe</button>
+        </div>
+
+      </div>
+
+      <div class="class-creater invisible">
+        
+          <p class="creater-title" >Choix du niveau: </p>
+            <select name="class-level" id="class-level-definer">
+              <option value="6" selected>6eme</option>
+              <option value="5">5eme</option>
+              <option value="4">4eme</option>
+              <option value="3">3eme</option>
+            </select>
+          
+          <p class="creater-title" >Choix de la lettre: </p>
+            <input type="text" id="letter-choice" placeholder="A, B, C...">
+
+          <p class="creater-title" >Elèves: </p>
+
+          <input id="student-firstname" class="name-choice" type="text" placeholder="Prénom...">
+            <br>
+          <input id="student-name" class="name-choice" type="text" placeholder="Nom...">
+            <br>
+
+          <button class="new-student" action="">Créer un nouvel élève</button>
+          
+          <div class="students-list"></div>
+          
+          <button class="finished">Terminé</button>
+        
+
+      </div>
+
+      <div class="class-manager invisible">
+        
+        <div class="class-container">
+
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+        <div class="credits">
+          <p>Developer: Louis Sochon</p>
+          <br>
+          <p>Graphistes: <a target="_blank" href="https://fr.freepik.com/vecteurs-libre/vecteur-fond-cristallise-vert-blanc_31067578.htm#query=triangle%20vert&position=12&from_view=keyword&track=ais">Image by rawpixel.com</a> on Freepik</p>
+        </div>
+    </footer>
+  </body>
+</html>

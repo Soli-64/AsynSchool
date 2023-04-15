@@ -1,0 +1,31 @@
+
+.footer {
+    background-color: #90c6a5;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 5vh;
+    position: relative;
+    margin-top: 7vh;
+}
+
+.credits {
+    color: #000;
+    padding-left: 3vw;
+    padding-top: 5vh;
+}
+
+.credits a {
+    color: #387555;
+}
+
+.finished {
+    margin-left: 15vw;
+    font-size: 3vw;
+    padding: 7px;
+    border-radius: 20px;
+    border: 1px solid #387555;
+    color: #387555;
+}

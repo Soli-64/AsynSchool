@@ -1,0 +1,12 @@
+@import './css/utils/reset.css';
+@import './css/pages/header.css';
+@import './css/pages/main.css';
+@import './css/pages/footer.css';
+
+.invisible {
+    display: none!important;
+}
+
+body {
+    font-family: 'Prosto One', serif;
+}

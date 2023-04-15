@@ -1,0 +1,4 @@
+Name: 
+
+    EduSync: "Transformer l'apprentissage pour le futur."
+    LearnTech: "Là où l'éducation rencontre l'innovation."

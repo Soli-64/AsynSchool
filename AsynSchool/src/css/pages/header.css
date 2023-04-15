@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-image: url('/public/images/banners/green-triangle.jpg');
+    font-family: 'Prosto One', serif;
+    width: 100%;
+    height: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
+
+.title {
+    font-size: 7vw;
+    color: #48a870;
+}
+
+.section-barre {
+    font-size: 2vw;
+    padding: 2vw;
+    display: flex;
+    text-decoration: underline;
+    color: #48a870;
+}
+
+.section-barre-element {
+    padding-right: 2vw;
+}
+
+.contact-barre {
+    font-size: 2vw;
+    padding: 2vw;
+    display: flex;
+    text-decoration: underline;
+    color: #48a870;
+}
+
+.contact-barre-element {
+    padding-left: 2vw;
+    color: #48a870;
+}
