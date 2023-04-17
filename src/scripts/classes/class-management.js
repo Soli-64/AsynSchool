@@ -63,8 +63,6 @@ const newClass = () => {
 
 const finalisation = (name, students, id) => {
         const classe = new Class(students, name, id)
-        console.log(classe.name)
-        console.log('classe ajoutée')
         document.querySelector('.classes-article').append(classe.divClassesElement)
         classMenu(classe)
 }
@@ -72,17 +70,17 @@ const finalisation = (name, students, id) => {
 const classMenu = (classes) => {
     
     const classe = classes
+    
+    const classeInfos = createElement('div', {class: 'student-manager'}, '')
+    classeInfos.append()
+    
     let divStudentsArray = []
+    
     Object.keys(classe.students).sort().forEach(e => {
         const student = classe.students[e]
-        const divStudent = createElement('div', {class: 'student-manager'}, ``)
-        const nameF = createElement('p', {class: ''}, `${student.name.toUpperCase()} ${student.firstname}`)
-        divStudent.append(nameF)
-        const noteZone = createElement('div', {class: 'noteZone', id: `note${student.name}`}, '')
-        divStudent.append(noteZone)
-        const classesElement = document.querySelector(`#class-${classes.name}`)
+        const classesElement = document.querySelector(`#class-${classe.name}`)
         
-        divStudentsArray.push(divStudent)
+        divStudentsArray.push(student.divStudent)
 
         classesElement.addEventListener('click', () => {
             document.querySelector('.class-manager').classList.remove('invisible')
@@ -91,15 +89,25 @@ const classMenu = (classes) => {
             divStudentsArray.forEach(e => {
                 document.querySelector('.class-container').append(e)
             })
+
         })
-        
+
     })
 
-}   
+}
 
 newClass()
 
 finalisation('4D', {
+    SOCHON: new Student('Louis', 'Sochon', '4D'),
     TOURRE: new Student('Martin', 'Tourre', '4D'),
-    SOCHON: new Student('Louis', 'Sochon', '4D')
+    DETOC: new Student('Mateo', 'Detoc', '4D'),
+    DUPRE: new Student('Lila', 'Dupre', '4D'),
+    GONCALVES: new Student('Chloe', 'Goncalves', '4D'),
+    ROY: new Student('Esteban', 'Roy', '4D'),
+    SEHIL: new Student('Keissy', 'Sehil', '4D'),
+    DESAULTY: new Student('Clément', 'Desaulty', '4D'),
+    LANGFORD: new Student('Alban', 'Langford', '4D'),
+    FERNANDEZ: new Student('Roméo', 'Fernandez', '4D'),
+    PIRON: new Student('Alexis', 'Piron', '4D'),
 }, '#0001')

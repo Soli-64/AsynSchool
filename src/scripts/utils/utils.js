@@ -23,4 +23,16 @@ export function addClass(elements, classes) {
     elements.forEach(e => {
         document.querySelector(e).classList.add(classes)
     })
-} 
+}
+
+export function randint(max) {
+    return Math.floor(Math.random() * max);
+}
+
+export function randomNotes(n) {
+    const notes = []
+    for (let x = 0; x <= (n - 1);x++) {
+        notes.push(randint(20))
+    }
+    return notes
+}

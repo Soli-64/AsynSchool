@@ -5,6 +5,7 @@
     background-image: url('/public/images/banners/green-triangle.jpg');
     font-family: 'Prosto One', serif;
     width: 100%;
+    max-width: 100%;
     height: auto;
     padding-top: 2vh;
     padding-bottom: 2vh;

@@ -2,13 +2,14 @@
 .footer {
     background-color: #90c6a5;
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
 
     padding-bottom: 5vh;
     position: relative;
-    margin-top: 7vh;
+    margin-top: 10vh;
 }
 
 .credits {
