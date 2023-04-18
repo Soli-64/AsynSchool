@@ -1,4 +1,4 @@
-import { createElement } from "../utils/utils.js";
+import { createElement, calculMoyenne } from "../utils/utils.js";
 
 
 export class Class {
@@ -13,6 +13,11 @@ export class Class {
         this.name = name
         this.students = students
         this.id = id
+        let studentsMoyennes = []
+        Object.keys(students).forEach(student => {
+            studentsMoyennes.push(students[student].moyenne)
+        })
+        this.moyenne = calculMoyenne(studentsMoyennes)
 
         // élément dans le container de classes
         const divClassesElement = createElement('div', {
@@ -34,7 +39,12 @@ export class Class {
 
         document.querySelector('.header').addEventListener('mouseenter', () => {
             document.querySelector('.note-menu')?.remove()
+            document.querySelector('.class-container').style.width = ''
+            document.querySelectorAll('.student-manager').forEach(e => {
+                e.style.width = ''
+            })
         })
 
     }
+
 }

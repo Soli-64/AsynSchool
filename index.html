@@ -21,28 +21,28 @@
     <header class="header">
       <div class="section-barre">
         <p id="accueil" class="section-barre-element" href="">accueil</p>
-        <p id="classes" href="" class="section-barre-element">classes</p>
-        <p href="" class="section-barre-element">EdT</p>
+        
       </div>
       <h1 class="title" id="main-title">AsynSchool</h1>
       <div class="contact-barre">
-        <p href="" class="contact-barre-element">notes</p>
-        <p class="contact-barre-element" href="">tjrpas</p>
-        <p class="contact-barre-element" href="">jsp</p>
+        <p id="classes" class="contact-barre-element">classes</p>
+        
       </div>
     </header>
 
+    <div class="citation">
+      <p id="citation">"Là où l'éducation rencontre l'innovation."</p>
+    </div>
+
     <main class="main">
-      <div class="citation">
-        <p id="citation">"Là où l'éducation rencontre l'innovation."</p>
-      </div>
+      
       <div class="accueil invisible">
         <article class="article-info">
           <h2 class="little-title class-create-title">Créer une classe</h2>
           <p class="text-article">Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-             Laboriosam dignissimos impedit unde quis consectetur, 
-             earum adipisci distinctio temporibus sed architecto veritatis 
-             exercitationem voluptate, tenetur soluta ex sint, aperiam culpa eius.</p>
+              Laboriosam dignissimos impedit unde quis consectetur, 
+              earum adipisci distinctio temporibus sed architecto veritatis 
+              exercitationem voluptate, tenetur soluta ex sint, aperiam culpa eius.</p>
         </article>
         <article class="article-info">
           <h2 class="little-title class-create-title">Gérer les notes, les élèves et les emplois du temps</h2>
@@ -59,8 +59,8 @@
 
         <div class="classes-container">
           <article class="classes-article">
+            <div class="new-class"><span id="new-class-more">+</span><span>Ajouter une classe</span></div>
           </article>
-          <button class="new-class">Créer une classe</button>
         </div>
 
       </div>
@@ -69,10 +69,12 @@
         
           <p class="creater-title" >Choix du niveau: </p>
             <select name="class-level" id="class-level-definer">
-              <option value="6" selected>6eme</option>
-              <option value="5">5eme</option>
-              <option value="4">4eme</option>
-              <option value="3">3eme</option>
+              <option value="6" selected>6nd</option>
+              <option value="5">5nd</option>
+              <option value="4">4nd</option>
+              <option value="3">3nd</option>
+              <option value="2" >2nd</option>
+              <option value="1">1st</option>
             </select>
           
           <p class="creater-title" >Choix de la lettre: </p>
@@ -95,11 +97,13 @@
       </div>
 
       <div class="class-manager invisible">
-        
-        <div class="class-container">
 
+        <div class="student-menu">
+          <div class="class-container">
+
+          </div>
         </div>
-
+        
       </div>
     </main>
 
@@ -108,6 +112,8 @@
           <p>Developer: Louis Sochon</p>
           <br>
           <p>Graphistes: <a target="_blank" href="https://fr.freepik.com/vecteurs-libre/vecteur-fond-cristallise-vert-blanc_31067578.htm#query=triangle%20vert&position=12&from_view=keyword&track=ais">Image by rawpixel.com</a> on Freepik</p>
+          <br>
+          <p>Nom, Slogan: <a href="https://openai.com/" target="_blank">ChatGPT</a></p>
         </div>
     </footer>
   </body>

@@ -1,13 +1,19 @@
-import { createElement, randint, randomNotes } from "../utils/utils.js"
+import { createElement, randomNotes, upLetter, calculMoyenne } from "../utils/utils.js"
 import { Class } from "./classes.js"
 
 
 export class Student {
 
+    /**
+     * Class représentant l'élève individuellement
+     * @param {string} firstname prénom de l'élève
+     * @param {string} name nom de l'élève
+     * @param {string} classe classe
+     */
     constructor (firstname, name, classe) {
 
-        this.firstname = firstname
-        this.name = name
+        this.firstname = upLetter(firstname, 0)
+        this.name = upLetter(name, 0)
         this.classe = classe
         this.notes = {
             mathematiques: randomNotes(4),
@@ -15,8 +21,9 @@ export class Student {
             technologie: randomNotes(4)
         }
         
-        if (this.calculMoyenne([this.calculMoyenne(this.notes.mathematiques),this.calculMoyenne(this.notes.anglais),this.calculMoyenne(this.notes.technologie)])) {
-            this.moyenne = this.calculMoyenne([this.calculMoyenne(this.notes.mathematiques),this.calculMoyenne(this.notes.anglais),this.calculMoyenne(this.notes.technologie)])
+        // calcul de la moyenne (si erreur, retourne 0.00)
+        if (calculMoyenne([calculMoyenne(this.notes.mathematiques),calculMoyenne(this.notes.anglais),calculMoyenne(this.notes.technologie)])) {
+            this.moyenne = calculMoyenne([calculMoyenne(this.notes.mathematiques),calculMoyenne(this.notes.anglais),calculMoyenne(this.notes.technologie)])
         } else {
             this.moyenne = '0.00'
         }
@@ -44,17 +51,11 @@ export class Student {
         })
     }
 
-    calculMoyenne(notes) {
-        var b = notes.length,
-        c = 0, i;
-        for (i = 0; i < b; i++){
-            c += Number(notes[i]);
-        }
-        return (c/b).toFixed(2);
-    }
-
+    /**
+     * Fonction qui créer et ajoute au body le menu des notes
+     */
     noteMenu() {
-        
+        // suppression si menu présent
         document.querySelector('.note-menu')?.remove()
         // Réglage de la largeur des éléments préexistants
         document.querySelector('.class-container').style.width = '45vw'
@@ -65,13 +66,18 @@ export class Student {
         const noteMenu = createElement('div', {
             class: 'note-menu'
         }, '')
+        // Ajout des sélecteurs de menus
+        let menuSelectors = []
+        menuSelectors.push(createElement('p', {class: 'menu-selector', id: 'notes'}, 'Notes'))
+        menuSelectors.push(createElement('p', {class: 'menu-selector', id: 'edt'}, 'Emploi du temps'))
+        menuSelectors.forEach(e => {noteMenu.append(e)})
         // Ajout du nom de l'élève
         noteMenu.append(createElement('p',{},`${this.name} ${this.firstname}`))
         // Ajout des éléments
         Object.keys(this.notes).forEach(e => {
             const noteElement = createElement('div', {
                 class: `subject-notes`
-            }, `${e.toUpperCase()} ${createElement('p',{},' - ').innerText} ${this.calculMoyenne(this.notes[e])}`)
+            }, `${e.toUpperCase()} ${createElement('p',{},' - ').innerText} ${calculMoyenne(this.notes[e])}`)
             this.notes[e].forEach(n => {
                 noteElement.append(
                     createElement('p',{
@@ -79,10 +85,10 @@ export class Student {
                     }, `${n}`)
                 )
             noteMenu.append(noteElement)
+        
             })
         })
-        
-        document.querySelector('.class-manager').append(noteMenu)
+        // ajout du menu au contenu du body
+        document.querySelector('.student-menu').append(noteMenu)
     }
 }
-

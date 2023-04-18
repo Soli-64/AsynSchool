@@ -2,7 +2,9 @@ import { addClass, createElement } from "../utils/utils.js"
 import { Class } from "./classes.js"
 import { Student } from "./student.js"
 
-
+/**
+ * La fonction newClass met en marche les listeners de fonctionnement des classes (création et management)
+ */
 const newClass = () => {
 
     let className;
@@ -21,14 +23,11 @@ const newClass = () => {
 
         const classeName = `${document.querySelector('#class-level-definer').value}${document.querySelector('#letter-choice').value}`
         
+        // vérification du nom de la classe (un chiffre et une lettre)
         if (firstname && name && classeName.trim().split('').length === 2) {
-
             const student = new Student(firstname, name, classeName)
-
             students[student.name] = student
-            
             document.querySelector('.students-list').append(student.modelElement)
-        
         }
         
     })
@@ -38,8 +37,6 @@ const newClass = () => {
         const classeName = `${document.querySelector('#class-level-definer').value}${document.querySelector('#letter-choice').value}`
         className = classeName
         id = '#0001'
-
-        
 
         // Réinisialisation des choix
         document.querySelector('#class-level-definer').selectedIndex = 0
@@ -53,6 +50,7 @@ const newClass = () => {
             finalisation(className, students, id)
         }
 
+        // mise a l'écran de la div .classes et diparition des autres
         document.querySelector('.classes').classList.remove('invisible')
         addClass(['.accueil', '.class-creater', '.class-manager'], 'invisible')
 
@@ -60,21 +58,32 @@ const newClass = () => {
 
 }
 
-
+/**
+ * Fonction de création de la classe (pour éviter les interferances des variables a cause des addEvenListener)
+ * @param {string} name nom de la classe (ex: 4D) 
+ * @param {object} students Objet des élèves
+ * @param {string} id '#0001'
+ */
 const finalisation = (name, students, id) => {
         const classe = new Class(students, name, id)
-        document.querySelector('.classes-article').append(classe.divClassesElement)
+        document.querySelector('.classes-article').prepend(classe.divClassesElement)
         classMenu(classe)
 }
 
+/**
+ * Fonction qui créer la liste, affiche les moyennes et enclenche les listeners pour le menu de notes
+ * @param {Class} classes Class représentant la classe  
+ */
 const classMenu = (classes) => {
     
     const classe = classes
     
     const classeInfos = createElement('div', {class: 'student-manager'}, '')
-    classeInfos.append()
+    classeInfos.append(createElement('span', {}, `${classe.moyenne}`))
+    classeInfos.prepend(createElement('p', {}, classe.name))
     
     let divStudentsArray = []
+    divStudentsArray.push(classeInfos)
     
     Object.keys(classe.students).sort().forEach(e => {
         const student = classe.students[e]
@@ -96,18 +105,20 @@ const classMenu = (classes) => {
 
 }
 
+
 newClass()
 
+// classe générée pour les tests
 finalisation('4D', {
     SOCHON: new Student('Louis', 'Sochon', '4D'),
-    TOURRE: new Student('Martin', 'Tourre', '4D'),
-    DETOC: new Student('Mateo', 'Detoc', '4D'),
-    DUPRE: new Student('Lila', 'Dupre', '4D'),
-    GONCALVES: new Student('Chloe', 'Goncalves', '4D'),
-    ROY: new Student('Esteban', 'Roy', '4D'),
-    SEHIL: new Student('Keissy', 'Sehil', '4D'),
-    DESAULTY: new Student('Clément', 'Desaulty', '4D'),
-    LANGFORD: new Student('Alban', 'Langford', '4D'),
-    FERNANDEZ: new Student('Roméo', 'Fernandez', '4D'),
-    PIRON: new Student('Alexis', 'Piron', '4D'),
+    DUBOIS: new Student('Mathilde', 'Dubois', '4D'),
+    VALE: new Student('aria', 'vale', '4D'),
+    TCHEN: new Student('lila', 'tchen', '4D'),
+    GIRARD: new Student('Antoine', 'Girard', '4D'),
+    DURAND: new Student('Lucien', 'Durand', '4D'),
+    MARTIN: new Student('Théo', 'Martin', '4D'),
+    BERNARD: new Student('Léa', 'Bernard', '4D'),
+    DUPONT: new Student('Sébastien', 'Dupont', '4D'),
+    MOREAU: new Student('Juliette', 'Moreau', '4D'),
+    LAMBERT: new Student('Amélie', 'Lambert', '4D'),
 }, '#0001')

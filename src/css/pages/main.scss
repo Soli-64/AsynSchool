@@ -4,11 +4,6 @@
     max-width: 100%;
 }
 
-.citation {
-    width: 100%;
-    height: auto;
-}
-
 #citation {
     font-size: 2.5vw;
     padding-left: 25vw;
@@ -19,11 +14,6 @@
 .little-title {
     font-size: 3.9vw;
     text-decoration: underline;
-}
-
-.class-create-title {
-    padding-top: 3vh;
-    padding-left: 2vw;
 }
 
 .article-info {
@@ -46,48 +36,50 @@
 
 /* Partie New Class */
 
-.new-class-intro {
-    margin-top: 5vh;
-    padding-left: 5vw;
-    margin-bottom: 5vh;
-}
-
 .classes {
     width: 100%;
     height: auto;
-}
-
-.classes-container {
-    display: flex;
-    flex-direction: row;
-    margin-left: 10vw;
-    justify-content: space-around;
-    width: 50vw;
-}
-
-.classes-article {
-    width: 30vw;
-    height: auto;
-    border: 1px solid #478b64;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-}
-
-.no-class {
-    padding-top: 17vh;
-    padding-left: 10vw;
+    &-container {
+        display: flex;
+        flex-direction: row;
+        margin-left: 10vw;
+        justify-content: space-around;
+        width: 50vw;
+    }
+    &-article {
+        width: 30vw;
+        height: auto;
+        border: 1px solid #478b64;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
 }
 
 .new-class {
-    width: auto;
+    display: flex;
+    align-items: center;
+    width: 25vw;
     height: 5vh;
     font-size: 1.5vw;
-    border-radius: 20px;
-    border: 1px solid #478b64;
-    color: #fff;
-    background-color: #48ac43;
     font-family: 'Prosto One', serif;
+    transition: opacity 1s;
+    opacity: 30%;    
+    &:hover {
+        transition: opacity 1s;
+        opacity: 100%;
+    }
+    &-intro {
+        margin-top: 5vh;
+        padding-left: 5vw;
+        margin-bottom: 5vh;
+    }
+}
+
+#new-class-more {
+    padding-left: 2vw;
+    padding-right: 0.6vw;
+    font-size: 3vw;
 }
 
 .class {
@@ -100,16 +92,33 @@
     padding: 1vw;
     border: 1px solid #a2a2a2;
     background-color: #eae7e7;
+    &-creater {
+        width: 100%;
+        height: auto;
+    }
+    &-create-title {
+        padding-top: 3vh;
+        padding-left: 2vw;
+    }
+    &-container {
+        margin-top: 15vh;
+        margin-left: 5vw;
+        width: 53vw;
+        height: auto;
+        border: 1px solid #478b64;
+        padding: 5px;
+        &-student {
+            padding: 5px;
+        }
+    }
+    &-manager {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
 }
 
-/* Class Creater */
-
-.class-creater {
-
-    width: 100%;
-    height: auto;
-    
-}   
+/* Class Creater */ 
 
 .creater-title {
     margin-top: 10vh;
@@ -148,6 +157,23 @@
     font-family: 'Prosto One', serif;
 }
 
+.student {
+    &-manager {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        margin: 5px;
+        width: 50vw;    
+        max-width: 60vw;
+        background-color: #e7e6e6;
+    }
+    &-menu {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+}
+
 .new-student {
     color: #478b64;
     border: 1px solid #478b64;
@@ -177,58 +203,6 @@
     padding-right: 2vw;
 }
 
-.valid-button {
-    margin-top: 1vh;
-    margin-left: 1vw;
-    margin-bottom: -1vh;
-    width: 3.8vw;
-    height: 3.8vw;
-    border-radius: 100%;
-}
-
-/*                  CLASS - MANAGER                */
-
-.class-container {
-    margin-top: 15vh;
-    margin-left: 5vw;
-    width: 53vw;
-    height: auto;
-    border: 1px solid #478b64;
-    padding: 5px;
-}
-
-.class-container-student {
-    padding: 5px;
-}
-
-.student-manager {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-    margin: 5px;
-    width: 50vw;    
-    max-width: 60vw;
-    background-color: #e7e6e6;
-}
-
-.note-menu {
-    margin-top: 15vh;
-    padding: 1vw;
-    width: 45vw;
-    height: auto;
-    border: 2px solid #478b64;
-    font-family: 'Prosto One', serif;
-    animation-name: slideLeft;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-}
-
-.class-manager {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
-}
-
 .subject-notes {
     height: auto;
     padding-top: 2vh;
@@ -236,6 +210,20 @@
 
 .note {
     padding-left: 5vw;
+    &-menu {
+        margin-top: 15vh;
+        padding: 1vw;
+        width: 45vw;
+        height: auto;
+        max-height: 39vh;
+        border-left: 2px solid #478b64;
+        border-right: 2px solid #478b64;
+        border-bottom: 2px solid #478b64;
+        font-family: 'Prosto One', serif;
+        animation-name: slideLeft;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
 }
 
 .new-note {
@@ -250,11 +238,11 @@
 
 @keyframes slideLeft {
     0% {
-        position: absolute;
-        left: 100vw;
+        width: 0vw;
+        color: #fff;
     }   
     100% {
-        left: 55vw;
+        width: 45vw;
+        color: #000;
     }
 }
-

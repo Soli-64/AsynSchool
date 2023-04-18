@@ -22,11 +22,13 @@
     display: flex;
     text-decoration: underline;
     color: #48a870;
+    &-element {
+        padding-right: 2vw;
+
+    }
 }
 
-.section-barre-element {
-    padding-right: 2vw;
-}
+
 
 .contact-barre {
     font-size: 2vw;
@@ -34,9 +36,7 @@
     display: flex;
     text-decoration: underline;
     color: #48a870;
-}
-
-.contact-barre-element {
-    padding-left: 2vw;
-    color: #48a870;
+    &-element {
+        padding-left: 2vw;
+    }
 }

@@ -1,4 +1,4 @@
-import './src/styles.css'
+import './src/styles.scss'
 
 import './src/scripts/dom-interaction/buttons.js'
 
