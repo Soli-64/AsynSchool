@@ -1,15 +1,15 @@
 
 .footer {
-    background-color: #90c6a5;
+    background-color: #adb6fe;
     width: 100%;
     max-width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
-
+    margin-top: 15vh;
     padding-bottom: 5vh;
-    position: absolute;
-    margin-top: 10vh;
+    position: relative;
+    bottom: 0px;
 }
 
 .credits {

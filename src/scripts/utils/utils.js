@@ -33,8 +33,8 @@ export function addClass(elements, classes) {
  * @param {number} max nombre maximal obtensible souhaité 
  * @returns {number} 
  */
-export function randint(max) {
-    return Math.floor(Math.random() * max);
+export function randint(min, max) {
+    return Math.floor(Math.random() * max) + min;
 }
 
 /**
@@ -45,7 +45,7 @@ export function randint(max) {
 export function randomNotes(n) {
     const notes = []
     for (let x = 0; x <= (n - 1);x++) {
-        notes.push(randint(20) + randint(4))
+        notes.push(randint(6, 20))
     }
     return notes
 }
@@ -73,5 +73,13 @@ export function calculMoyenne(notes) {
     for (i = 0; i < b; i++){
         c += Number(notes[i]);
     }
-    return (c/b).toFixed(2);
+    return Number((c/b)).toFixed(2);
+}
+
+export function reSizeBody() {
+    if (document.querySelector('body').offsetHeight < screen.availHeight) {
+        document.querySelector('body').style.height = '100vh'
+    } else {
+        return
+    }
 }

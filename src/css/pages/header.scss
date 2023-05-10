@@ -2,18 +2,21 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    background-image: url('/public/images/banners/green-triangle.jpg');
+    //background-image: url('/public/images/banners/green-triangle.jpg');
+    background-color: #88adff;
     font-family: 'Prosto One', serif;
     width: 100%;
     max-width: 100%;
     height: auto;
     padding-top: 2vh;
     padding-bottom: 2vh;
+    position: fixed;
 }
 
 .title {
     font-size: 7vw;
-    color: #48a870;
+    color: #adb6fe;
+    text-shadow: 5px 5px 10px #1f5da4;
 }
 
 .section-barre {
@@ -21,10 +24,10 @@
     padding: 2vw;
     display: flex;
     text-decoration: underline;
-    color: #48a870;
+    color: #adb6fe;
     &-element {
         padding-right: 2vw;
-
+        text-shadow: 2px 0px 10px #1f5da4;
     }
 }
 
@@ -35,8 +38,9 @@
     padding: 2vw;
     display: flex;
     text-decoration: underline;
-    color: #48a870;
+    color: #adb6fe;
     &-element {
         padding-left: 2vw;
+        text-shadow: 2px 0px 5px #1f5da4;
     }
 }

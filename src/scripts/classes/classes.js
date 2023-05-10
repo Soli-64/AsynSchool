@@ -11,7 +11,14 @@ export class Class {
     constructor (students, name, id) {
 
         this.name = name
-        this.students = students
+        // classement dans l'ordre alphabétique
+        this.students = {}
+        const s = students
+        const sSort = Object.keys(s).sort()
+        sSort.forEach(s => {
+            this.students[s] = students[s]
+        })
+        
         this.id = id
         let studentsMoyennes = []
         Object.keys(students).forEach(student => {

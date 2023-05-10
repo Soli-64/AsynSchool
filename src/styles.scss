@@ -8,6 +8,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: auto;    
     font-family: 'Prosto One', serif;
+    background-color: #eaeaea;
 }

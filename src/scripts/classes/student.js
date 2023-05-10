@@ -22,11 +22,8 @@ export class Student {
         }
         
         // calcul de la moyenne (si erreur, retourne 0.00)
-        if (calculMoyenne([calculMoyenne(this.notes.mathematiques),calculMoyenne(this.notes.anglais),calculMoyenne(this.notes.technologie)])) {
-            this.moyenne = calculMoyenne([calculMoyenne(this.notes.mathematiques),calculMoyenne(this.notes.anglais),calculMoyenne(this.notes.technologie)])
-        } else {
-            this.moyenne = '0.00'
-        }
+        this.moyenne = this.generalMoyenne()
+      
         
         // élément dans la création de la classe
         this.modelElement = createElement('div', {
@@ -51,12 +48,21 @@ export class Student {
         })
     }
 
+    generalMoyenne() {
+        let moyen = 0;
+        Object.keys(this.notes).forEach(e => {
+            moyen += calculMoyenne(this.notes[e]) * 1
+        })
+        return (moyen / Object.keys(this.notes).length).toFixed(2)
+    }
+
     /**
      * Fonction qui créer et ajoute au body le menu des notes
      */
     noteMenu() {
         // suppression si menu présent
         document.querySelector('.note-menu')?.remove()
+        document.querySelector('.class-menu')?.remove()
         // Réglage de la largeur des éléments préexistants
         document.querySelector('.class-container').style.width = '45vw'
         document.querySelectorAll('.student-manager').forEach(e => {
@@ -67,10 +73,13 @@ export class Student {
             class: 'note-menu'
         }, '')
         // Ajout des sélecteurs de menus
+        const selectorsContainer = createElement('div', {class: 'menu-selector-container'}, '')
         let menuSelectors = []
         menuSelectors.push(createElement('p', {class: 'menu-selector', id: 'notes'}, 'Notes'))
         menuSelectors.push(createElement('p', {class: 'menu-selector', id: 'edt'}, 'Emploi du temps'))
-        menuSelectors.forEach(e => {noteMenu.append(e)})
+        menuSelectors.push(createElement('p', {class: 'menu-selector menu-selector-closer'}, 'x'))
+        menuSelectors.forEach(e => {selectorsContainer.append(e)})
+        noteMenu.prepend(selectorsContainer)
         // Ajout du nom de l'élève
         noteMenu.append(createElement('p',{},`${this.name} ${this.firstname}`))
         // Ajout des éléments
@@ -82,13 +91,16 @@ export class Student {
                 noteElement.append(
                     createElement('p',{
                         class: 'note'
-                    }, `${n}`)
+                    }, `${n}`) 
                 )
             noteMenu.append(noteElement)
-        
             })
         })
+
         // ajout du menu au contenu du body
         document.querySelector('.student-menu').append(noteMenu)
+        document.querySelector('.menu-selector-closer').addEventListener('click', () => {
+            document.querySelector('.note-menu')?.remove()
+        })
     }
 }

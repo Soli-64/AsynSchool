@@ -1,5 +1,9 @@
+// CSS
 import './src/styles.scss'
 
-import './src/scripts/dom-interaction/buttons.js'
-
+// FONCTION PRINCIPALES
 import './src/scripts/classes/class-management.js'
+
+// FONCTIONS SECONDAIRES
+import './src/scripts/dom-interaction/inputs.js'
+import './src/scripts/dom-interaction/animations.js'
