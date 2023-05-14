@@ -20,11 +20,8 @@ export class Class {
         })
         
         this.id = id
-        let studentsMoyennes = []
-        Object.keys(students).forEach(student => {
-            studentsMoyennes.push(students[student].moyenne)
-        })
-        this.moyenne = calculMoyenne(studentsMoyennes)
+        
+        this.generalMoyenne()
 
         // élément dans le container de classes
         const divClassesElement = createElement('div', {
@@ -54,4 +51,11 @@ export class Class {
 
     }
 
+    generalMoyenne() {
+        let studentsMoyennes = []
+        Object.keys(this.students).forEach(student => {
+            studentsMoyennes.push(this.students[student].moyenne)
+        })
+        this.moyenne = calculMoyenne(studentsMoyennes)
+    }
 }

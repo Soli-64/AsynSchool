@@ -3,7 +3,8 @@ import { Class } from "./classes.js"
 import { Student } from "./student.js"
 
 /**
- * La fonction newClass met en marche les listeners de fonctionnement des classes (création et management)
+ * La fonction newClass met en marche les listeners de fonctionnement des classes: elle
+ * permet la création de classes, l'ajout de notes...
  */
 const runningFunctionality = () => {
 
@@ -79,7 +80,7 @@ const classMenu = (classes) => {
     const classe = classes
     
     const classeInfos = createElement('div', {class: 'student-manager class-model'}, '')
-    classeInfos.append(createElement('span', {}, `${classe.moyenne}`))
+    classeInfos.append(createElement('span', {class: 'class-moyenne'}, `${classe.moyenne}`))
     classeInfos.prepend(createElement('p', {}, classe.name))
     // ajout du listener => menu d'ajout des notes
     classeInfos.addEventListener('click', () => {
@@ -141,12 +142,12 @@ const classMenu = (classes) => {
     let divStudentsArray = []
     divStudentsArray.push(classeInfos)
     
-    Object.keys(classe.students).forEach(e => {
-        const student = classe.students[e]
+    Object.values(classe.students).forEach(e => {
+        const student = e
         const classesElement = document.querySelector(`#class-${classe.name}`)
         
         divStudentsArray.push(student.divStudent)
-
+      
         classesElement.addEventListener('click', () => {
             document.querySelector('.class-manager').classList.remove('invisible')
             addClass(['.accueil', '.class-creater', '.classes'], 'invisible')
@@ -154,25 +155,22 @@ const classMenu = (classes) => {
             divStudentsArray.forEach(e => {
                 document.querySelector('.class-container').append(e)
             })
-
+      
         })
-
-    })
+      
+      })
 
 }
 
 function updateMoyennes(classe) {
-    console.log(classe)
-    console.log('test')
-    Object.keys(classe.students).forEach((s) => {
-        classe.students[s].moyenne = classe.students[s].generalMoyenne()
+    Object.values(classe.students).forEach((s) => {
+        s.moyenne = s.generalMoyenne()
     })
     document.querySelectorAll('.noteZone').forEach(e => {
-        //console.log(classe.students[e.id.replace('note', '').toUpperCase()])
-        console.log(e.innerHTML)
         e.innerHTML = classe.students[e.id.replace('note', '').toUpperCase()].moyenne
-        console.log(e.innerHTML)
     })
+    classe.generalMoyenne()
+    document.querySelector('.class-moyenne').innerHTML = classe.moyenne
 }
 
 // Lancement du code (initialisation)

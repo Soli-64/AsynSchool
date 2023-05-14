@@ -63,11 +63,6 @@ export class Student {
         // suppression si menu présent
         document.querySelector('.note-menu')?.remove()
         document.querySelector('.class-menu')?.remove()
-        // Réglage de la largeur des éléments préexistants
-        document.querySelector('.class-container').style.width = '45vw'
-        document.querySelectorAll('.student-manager').forEach(e => {
-            e.style.width = '42vw'
-        })
         // Création du menu
         const noteMenu = createElement('div', {
             class: 'note-menu'
