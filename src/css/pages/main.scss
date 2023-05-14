@@ -130,7 +130,7 @@
         margin-top: 5vh;
         margin-left: 1vw;
         margin-right: 1vw;
-        width: 50vw;
+        width: 45vw;
         background-color: #bbc3ff;
         border: 1px solid #004695;
         border-radius: 20px;
@@ -241,6 +241,7 @@
 .subject-notes {
     height: auto;
     padding-top: 2vh;
+    padding-left: 2vw;
 }
 
 .note {
@@ -248,8 +249,8 @@
     &-menu {
         margin-top: 15vh;
         margin-left: 1vw;
-        padding: 1vw;
-        width: 44vw;
+        margin-right: 1vw;
+        width: 45vw;
         height: auto;
         background-color: #adb6fe;
         border-radius: 20px;
@@ -341,13 +342,9 @@
 @keyframes slideLeft {
     0% {
         width: 0vw;
-        color: #e0f3e8;
-        font-size: 1%;
         opacity: 0%;
     }   
     50% {
-        color: #d3f6e2;
-        font-size: 2%;
         opacity: 15%;
     }
     75% {
